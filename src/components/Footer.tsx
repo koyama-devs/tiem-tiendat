@@ -14,7 +14,7 @@ export default function Footer() {
     <Box sx={{ backgroundColor: "#333", color: "white", py: 6 }}>
       <Container>
         <Grid container spacing={4}>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
               Tiệm Điện Tín Đạt
             </Typography>
@@ -24,7 +24,7 @@ export default function Footer() {
               0909-123-456
             </Typography>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
               Liên kết nhanh
             </Typography>
@@ -38,7 +38,7 @@ export default function Footer() {
               Liên hệ
             </Link>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Typography variant="h6" gutterBottom>
               Mạng xã hội
             </Typography>

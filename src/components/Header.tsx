@@ -31,7 +31,7 @@ export default function Header() {
         <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
           <List sx={{ width: 200 }}>
             {menuItems.map((item) => (
-              <ListItem button key={item} onClick={() => setOpen(false)}>
+              <ListItem component="button" key={item} onClick={() => setOpen(false)}>
                 <ListItemText primary={item} />
               </ListItem>
             ))}
