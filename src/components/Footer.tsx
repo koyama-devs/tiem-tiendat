@@ -1,9 +1,19 @@
-export default function Footer(){
+import { Box, Typography } from "@mui/material";
+
+export default function Footer() {
   return (
-    <footer className="bg-white mt-8 py-6">
-      <div className="container mx-auto px-4 text-sm text-gray-600">
-        © Tiệm sửa chữa Tiến Đạt — Địa chỉ: ... — Hotline: 0123-456-789
-      </div>
-    </footer>
-  )
+    <Box
+      sx={{
+        bgcolor: "grey.900",
+        color: "white",
+        py: 3,
+        textAlign: "center",
+        mt: 4,
+      }}
+    >
+      <Typography variant="body2">
+        © 2025 Tiệm Sửa Chữa Tiến Đạt. All rights reserved.
+      </Typography>
+    </Box>
+  );
 }

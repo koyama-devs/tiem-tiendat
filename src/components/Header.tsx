@@ -1,14 +1,43 @@
+import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
-export default function Header(){
+export default function Header() {
+  const [open, setOpen] = useState(false);
+
+  const menuItems = ["Trang chủ", "Dịch vụ", "Liên hệ"];
+
   return (
-    <header className="bg-white shadow">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="text-xl font-bold">Tiệm sửa chữa Tiến Đạt</div>
-        <nav className="space-x-4">
-          <a href="#services" className="hover:underline">Dịch vụ</a>
-          <a href="#contact" className="hover:underline">Liên hệ</a>
-        </nav>
-      </div>
-    </header>
-  )
+    <AppBar position="static">
+      <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Typography variant="h6">Tiệm Sửa Chữa Tiến Đạt</Typography>
+
+        {/* Desktop Menu */}
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+          {menuItems.map((item) => (
+            <Typography key={item} sx={{ cursor: "pointer" }}>
+              {item}
+            </Typography>
+          ))}
+        </Box>
+
+        {/* Mobile Menu */}
+        <IconButton
+          sx={{ display: { xs: "block", md: "none" } }}
+          onClick={() => setOpen(true)}
+        >
+          <MenuIcon sx={{ color: "white" }} />
+        </IconButton>
+        <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+          <List sx={{ width: 200 }}>
+            {menuItems.map((item) => (
+              <ListItem button key={item} onClick={() => setOpen(false)}>
+                <ListItemText primary={item} />
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
+      </Toolbar>
+    </AppBar>
+  );
 }

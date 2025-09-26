@@ -1,10 +1,24 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 
-createRoot(document.getElementById('root')!).render(
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#1976d2", // xanh MUI mặc định
+    },
+    secondary: {
+      main: "#f50057", // hồng làm nút CTA
+    },
+  },
+});
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
-)
+);
