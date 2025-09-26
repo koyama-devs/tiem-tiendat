@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, Typography, IconButton, Drawer, List, ListItem, ListItemText, Box } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Header() {
