@@ -5,7 +5,7 @@ import {
     Container,
     Typography
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid"; // dùng Grid
 
 const services = [
   {
@@ -33,7 +33,7 @@ export default function Services() {
       </Typography>
       <Grid container spacing={4}>
         {services.map((s, i) => (
-          <Grid key={i} size={{ xs: 12, sm:6, md: 4 }}>
+          <Grid key={i} size={{ xs: 12, sm: 6, md: 4 }}>
             <Card sx={{ height: "100%", boxShadow: 3 }}>
               <CardMedia
                 component="img"

@@ -1,5 +1,16 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, Box, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from "@mui/material";
+import {
+    AppBar,
+    Box,
+    Drawer,
+    IconButton,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+    Toolbar,
+    Typography,
+} from "@mui/material";
 import { useState } from "react";
 
 export default function Header() {
@@ -31,8 +42,10 @@ export default function Header() {
         <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
           <List sx={{ width: 200 }}>
             {menuItems.map((item) => (
-              <ListItem component="button" key={item} onClick={() => setOpen(false)}>
-                <ListItemText primary={item} />
+              <ListItem key={item} disablePadding>
+                <ListItemButton onClick={() => setOpen(false)}>
+                  <ListItemText primary={item} />
+                </ListItemButton>
               </ListItem>
             ))}
           </List>
