@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./theme";
 
 import ContactForm from "./components/ContactForm";
+import FloatingChatButtons from "./components/FloatingChatButtons";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -20,6 +21,7 @@ export default function App() {
       <Services />
       <ContactForm />
       <Footer />
+      <FloatingChatButtons />
     </ThemeProvider>
   );
 }
