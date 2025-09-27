@@ -146,7 +146,7 @@ export default function Hero() {
     },
   }}
 >
-  Liên hệ ngay Hotline: 0822.165.197
+  Liên hệ ngay Hotline 0822.165.197
 </Button>
 
 
