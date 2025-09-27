@@ -24,15 +24,15 @@ export default function Footer() {
           <Grid size={{ xs: 12, md: 5.5 }}>
             {/* Logo image */}
             <Box
-                component="img"
-                src="/images/logo.png" // đường dẫn tới file logo
-                alt="Tiến Đạt Logo"
-                sx={{
-                height: 50,         // chiều cao logo
+              component="img"
+              src="/images/logo.png" // đường dẫn tới file logo
+              alt="Tiến Đạt Logo"
+              sx={{
+                height: 50, // chiều cao logo
                 width: "auto",
-                mr: 2,              // khoảng cách với chữ
+                mr: 2, // khoảng cách với chữ
                 mb: 2,
-                }}
+              }}
             />
             <Typography sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <LocationOnIcon fontSize="small" sx={{ mr: 1 }} />
@@ -85,15 +85,22 @@ export default function Footer() {
               Mạng xã hội
             </Typography>
             <Box>
-              <IconButton href="#" sx={{ color: "white", "&:hover": { color: "#4267B2" } }}>
-                <FacebookIcon />
-              </IconButton>
-              <IconButton href="#" sx={{ color: "white", "&:hover": { color: "#E1306C" } }}>
-                <InstagramIcon />
-              </IconButton>
-              <IconButton href="#" sx={{ color: "white", "&:hover": { color: "#FF0000" } }}>
-                <YoutubeIcon />
-              </IconButton>
+              {[
+                { icon: <FacebookIcon />, href: "#" },
+                { icon: <InstagramIcon />, href: "#" },
+                { icon: <YoutubeIcon />, href: "#" },
+              ].map((item, idx) => (
+                <IconButton
+                  key={idx}
+                  href={item.href}
+                  sx={{
+                    color: "white",
+                    "&:hover": { color: theme.palette.secondary.main },
+                  }}
+                >
+                  {item.icon}
+                </IconButton>
+              ))}
             </Box>
           </Grid>
         </Grid>
