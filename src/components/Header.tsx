@@ -47,17 +47,6 @@ export default function Header() {
             mr: 2,              // khoảng cách với chữ
             }}
         />
-        {/* Tên tiệm */}
-        <Typography
-        variant="h6"
-        sx={{
-            fontWeight: "bold",
-            letterSpacing: 1,
-            cursor: "pointer",
-        }}
-        >
-        </Typography>
-
         </Box>
 
         {/* Desktop Menu */}
