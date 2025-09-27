@@ -37,7 +37,7 @@ export default function Header() {
             "& span": { color: "#00e676" }, // làm chữ Đạt nổi bật
           }}
         >
-          Tiệm Sửa Chữa <span>Tiến Đạt</span>
+        <span>Tiến Đạt</span> - Sửa Chữa Điện Tử & Gia Dụng
         </Typography>
 
         {/* Desktop Menu */}

@@ -56,7 +56,7 @@ export default function Hero() {
             fontWeight: 700,
           }}
         >
-          Dịch vụ sửa chữa điện tử uy tín tại Đà Nẵng
+          Dịch vụ sửa chữa điện tử và gia dung uy tín tại Đà Nẵng
         </Typography>
 
         <Typography
@@ -68,7 +68,7 @@ export default function Hero() {
             fontSize: { xs: "1.1rem", md: "1.3rem" },
           }}
         >
-          Nhanh chóng – Chuyên nghiệp – Giá hợp lý
+          Nhanh chóng – Chuyên nghiệp – Giá cả hợp lý
         </Typography>
 
         <Button
