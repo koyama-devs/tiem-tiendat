@@ -1,5 +1,4 @@
 import { Box, Button, Typography } from "@mui/material";
-import { Link } from "react-scroll";
 
 export default function Hero() {
   return (
@@ -127,31 +126,29 @@ export default function Hero() {
           </Typography>
 
           <Button
-            component={Link}
-            to="contact"
-            smooth
-            duration={600}
-            offset={-80}
-            variant="contained"
-            size="large"
-            sx={{
-                px: 4,
-                py: 1.5,
-                fontSize: "1rem",
-                fontWeight: "bold",
-                borderRadius: "30px",
-                backgroundColor: "secondary.main",        // màu cyan chủ đạo
-                color: "primary.contrastText",          // chữ trắng
-                transition: "all 0.3s ease",            // mượt khi hover
-                "&:hover": {
-                backgroundColor: "primary.main",      // hover đậm hơn
-                boxShadow: "0 6px 20px rgba(255, 152, 0, 0.5)",
-                transform: "translateY(-2px)",        // nhích nhẹ lên
-                },
-            }}
-            >
-            Liên hệ ngay
-            </Button>
+  component="a"
+  href="tel:+84822165197" // đổi thành số Hotline của bạn
+  variant="contained"
+  size="large"
+  sx={{
+    px: 4,
+    py: 1.5,
+    fontSize: "1rem",
+    fontWeight: "bold",
+    borderRadius: "30px",
+    backgroundColor: "secondary.main",
+    color: "primary.contrastText",
+    transition: "all 0.3s ease",
+    "&:hover": {
+      backgroundColor: "primary.main",
+      boxShadow: "0 6px 20px rgba(255, 152, 0, 0.5)",
+      transform: "translateY(-2px)",
+    },
+  }}
+>
+  Liên hệ ngay Hotline: 0822.165.197
+</Button>
+
 
         </Box>
       </Box>
