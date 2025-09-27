@@ -29,6 +29,25 @@ export default function Header() {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Logo */}
+        <Box
+        sx={{
+            display: "flex",
+            alignItems: "center",
+            cursor: "pointer",
+        }}
+        >
+        {/* Logo image */}
+        <Box
+            component="img"
+            src="/images/logo.png" // đường dẫn tới file logo
+            alt="Tiến Đạt Logo"
+            sx={{
+            height: 50,         // chiều cao logo
+            width: "auto",
+            mr: 2,              // khoảng cách với chữ
+            }}
+        />
+        {/* Tên tiệm */}
         <Typography
         variant="h6"
         sx={{
@@ -37,9 +56,9 @@ export default function Header() {
             cursor: "pointer",
         }}
         >
-        <span style={{ color: "#ffffffCC" }}>Tiến Đạt - Sửa Chữa Điện Tử & Gia Dụng</span>
         </Typography>
 
+        </Box>
 
         {/* Desktop Menu */}
         <Box
