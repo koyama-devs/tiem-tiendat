@@ -1,4 +1,13 @@
-import { Alert, Box, Button, Container, MenuItem, Paper, TextField, Typography } from "@mui/material";
+import {
+    Alert,
+    Box,
+    Button,
+    Container,
+    MenuItem,
+    Paper,
+    TextField,
+    Typography,
+} from "@mui/material";
 import { useState } from "react";
 
 export default function ContactForm() {
@@ -19,14 +28,13 @@ export default function ContactForm() {
     "Sửa bếp từ",
     "Sửa âm ly",
     "Sửa đầu karaoke / CD",
-    "Sửa máy hút bụi",            // cập nhật
+    "Sửa máy hút bụi", // cập nhật
     "Sửa máy rửa chén bát",
     "Sửa quạt điện",
     "Sửa nồi cơm điện",
     "Sửa nồi chiên không dầu",
     "Sửa các thiết bị điện tử & điện cơ khác",
-    ];
-
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -36,18 +44,48 @@ export default function ContactForm() {
     e.preventDefault();
     console.log(form);
     setSubmitted(true);
-    setForm({ name: "", phone: "", email: "", address: "", serviceType: "", message: "" });
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      address: "",
+      serviceType: "",
+      message: "",
+    });
   };
 
   return (
-    <Box id="contact" sx={{ backgroundColor: "#f9f9f9", py: { xs: 6, md: 10 } }}>
+    <Box
+      id="contact"
+      sx={{ backgroundColor: "#f9f9f9", py: { xs: 6, md: 10 } }}
+    >
       <Container maxWidth="sm">
-        <Paper sx={{ p: { xs: 3, md: 5 }, borderRadius: 2, boxShadow: 4 }}>
-          <Typography variant="h5" align="center" fontWeight="bold" gutterBottom>
+        <Paper
+          sx={{
+            p: { xs: 3, md: 5 },
+            borderRadius: 3,
+            boxShadow: 5,
+            borderTop: "6px solid",
+            borderColor: "primary.main",
+          }}
+        >
+          <Typography
+            variant="h5"
+            align="center"
+            fontWeight="bold"
+            gutterBottom
+            sx={{ color: "secondary.main" }}
+          >
             Liên hệ với chúng tôi
           </Typography>
-          <Typography variant="body2" align="center" color="text.secondary" sx={{ mb: 3 }}>
-            Hãy để lại thông tin, chúng tôi sẽ liên hệ lại trong thời gian sớm nhất.
+          <Typography
+            variant="body2"
+            align="center"
+            color="text.secondary"
+            sx={{ mb: 3 }}
+          >
+            Hãy để lại thông tin, chúng tôi sẽ liên hệ lại trong thời gian sớm
+            nhất.
           </Typography>
 
           {submitted && (
@@ -75,9 +113,9 @@ export default function ContactForm() {
               placeholder="Số điện thoại để chúng tôi liên hệ"
               fullWidth
               margin="normal"
+              inputMode="tel"
               required
             />
-            {/* Optional fields */}
             <TextField
               label="Email"
               name="email"
@@ -97,7 +135,6 @@ export default function ContactForm() {
               fullWidth
               margin="normal"
             />
-            {/* Service dropdown */}
             <TextField
               select
               label="Loại dịch vụ"
@@ -110,11 +147,11 @@ export default function ContactForm() {
             >
               <MenuItem value="">Chọn dịch vụ</MenuItem>
               {servicesList.map((s, idx) => (
-                <MenuItem key={idx} value={s}>{s}</MenuItem>
+                <MenuItem key={idx} value={s}>
+                  {s}
+                </MenuItem>
               ))}
             </TextField>
-
-            {/* Description */}
             <TextField
               label="Mô tả lỗi / yêu cầu"
               name="message"
@@ -132,7 +169,13 @@ export default function ContactForm() {
               type="submit"
               variant="contained"
               fullWidth
-              sx={{ mt: 3, py: 1.5, fontWeight: "bold" }}
+              sx={{
+                mt: 3,
+                py: 1.5,
+                fontWeight: "bold",
+                borderRadius: 2,
+                textTransform: "none",
+              }}
             >
               Gửi liên hệ
             </Button>
