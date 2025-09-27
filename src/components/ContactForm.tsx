@@ -19,7 +19,7 @@ export default function ContactForm() {
   };
 
   return (
-    <Box sx={{ backgroundColor: "#f9f9f9", py: { xs: 6, md: 10 } }}>
+    <Box id="contact" sx={{ backgroundColor: "#f9f9f9", py: { xs: 6, md: 10 } }}>
       <Container maxWidth="sm">
         <Paper sx={{ p: 4, borderRadius: 2, boxShadow: 4 }}>
           <Typography variant="h5" align="center" fontWeight="bold" gutterBottom>

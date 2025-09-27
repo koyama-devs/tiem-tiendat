@@ -1,4 +1,5 @@
 import { Box, Button, Container, Typography } from "@mui/material";
+import { Link } from "react-scroll";
 
 export default function Hero() {
   return (
@@ -17,8 +18,7 @@ export default function Hero() {
         sx={{
           position: "absolute",
           inset: 0,
-          backgroundImage:
-            'url("./images/hero-bg.jpg")',
+          backgroundImage: 'url("./images/hero-bg.jpg")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           zIndex: 0,
@@ -26,13 +26,17 @@ export default function Hero() {
         }}
       />
 
-      {/* Overlay */}
+      {/* Modern overlay */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          background:
-            "linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.05))",
+          background: `linear-gradient(
+            135deg,
+            rgba(0, 0, 0, 0.2) 0%,
+            rgba(0, 0, 0, 0.4) 60%,
+            rgba(58, 66, 86, 0.5) 100%
+          )`,
           zIndex: 1,
         }}
       />
@@ -68,18 +72,26 @@ export default function Hero() {
         </Typography>
 
         <Button
-          variant="contained"
-          color="secondary"
-          size="large"
-          sx={{
-            px: 4,
-            py: 1.5,
-            fontSize: "1rem",
-            fontWeight: "bold",
-            borderRadius: "30px",
-          }}
-        >
-          Liên hệ ngay
+            component={Link}
+            to="contact"
+            smooth={true}          // scroll mượt
+            duration={600}         // thời gian scroll 600ms
+            offset={-80}           // trượt lên 80px để tránh bị navbar che
+            spy={true}             // active class khi scroll tới
+            exact="true"
+            activeClass="active"   // class CSS khi scroll tới
+            variant="contained"
+            color="secondary"
+            size="large"
+            sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: "1rem",
+                fontWeight: "bold",
+                borderRadius: "30px",
+            }}
+            >
+            Liên hệ ngay
         </Button>
       </Container>
     </Box>
