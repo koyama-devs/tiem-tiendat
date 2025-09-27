@@ -77,16 +77,13 @@ const mechanicalServices = [
   },
 ];
 
-// Nhóm khác
-const otherServices = [
-  {
-    title: "Sửa các thiết bị điện tử & điện cơ khác",
-    desc: "Liên hệ để trao đổi chi tiết về dịch vụ sửa chữa các thiết bị khác.",
-    img: "/service-other.jpg",
-  },
-];
+type Service = {
+  title: string;
+  desc: string;
+  img: string;
+};
 
-function ServiceGrid({ services }) {
+function ServiceGrid({ services }: { services: Service[] }) {
   return (
     <Grid container spacing={4}>
       {services.map((s, i) => (
