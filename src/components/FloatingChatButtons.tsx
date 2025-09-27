@@ -5,7 +5,7 @@ import ZaloIcon from "./ZaloIcon";
 
 const FloatingChatButtons: React.FC = () => {
   const handleZaloClick = (): void => {
-    window.open("https://zalo.me/your-id", "_blank");
+    window.open("https://zalo.me/84822165197", "_blank");
   };
 
   const handleMessengerClick = (): void => {
