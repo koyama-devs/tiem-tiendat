@@ -1,96 +1,160 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-scroll";
 
 export default function Hero() {
   return (
     <Box
       sx={{
+        width: "100%",           // fullwidth
+        minHeight: "100vh",      // full height
         position: "relative",
-        bgcolor: "grey.900",
-        color: "white",
-        py: { xs: 8, md: 12 },
-        textAlign: "center",
-        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start",
+        pt: { xs: 8, md: 12 },
+        backgroundColor: "#242424",
+        overflow: "hidden",      // cho dây treo ra ngoài
       }}
     >
-      {/* Background image */}
+      {/* Dây treo trái */}
       <Box
         sx={{
           position: "absolute",
-          inset: 0,
-          backgroundImage: 'url("./images/hero-bg.jpg")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          zIndex: 0,
-          filter: "brightness(0.4)",
+          top: 0,
+          left: "30%",
+          width: "4px",
+          height: "97px",
+          backgroundColor: "#ccc",
+          borderRadius: "2px",
+          transform: "rotate(-5deg)",
+          zIndex: 3,
         }}
       />
-
-      {/* Modern overlay */}
+      {/* Dây treo phải */}
       <Box
         sx={{
           position: "absolute",
-          inset: 0,
-          background: `linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.2) 0%,
-            rgba(0, 0, 0, 0.4) 60%,
-            rgba(58, 66, 86, 0.5) 100%
-          )`,
-          zIndex: 1,
+          top: 0,
+          right: "30%",
+          width: "4px",
+          height: "97px",
+          backgroundColor: "#ccc",
+          borderRadius: "2px",
+          transform: "rotate(5deg)",
+          zIndex: 3,
         }}
       />
 
-      {/* Content */}
-      <Container
-        maxWidth="md"
+      {/* Hero bảng */}
+      <Box
         sx={{
           position: "relative",
+          width: { xs: "95%", md: "80%" },
+          minHeight: { xs: "65vh", md: "75vh" },
+          backgroundColor: "grey.900",
+          borderRadius: "20px",
+          overflow: "hidden",
+          boxShadow: "0 8px 20px rgba(0,0,0,0.5)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
           zIndex: 2,
+          color: "white",
         }}
       >
-        <Typography
-          variant="h2"
+        {/* Background image */}
+        <Box
           sx={{
-            fontSize: { xs: "2.2rem", md: "3.5rem" },
-            fontWeight: 700,
+            position: "absolute",
+            inset: 0,
+            backgroundImage: 'url("./images/hero-bg.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "brightness(0.4)",
+            zIndex: 0,
           }}
-        >
-          Dịch vụ sửa chữa điện tử và gia dung uy tín tại Đà Nẵng
-        </Typography>
+        />
 
-        <Typography
-          variant="h6"
+        {/* Overlay */}
+        <Box
           sx={{
-            mt: 3,
-            mb: 5,
-            color: "grey.200",
-            fontSize: { xs: "1.1rem", md: "1.3rem" },
+            position: "absolute",
+            inset: 0,
+            background: `linear-gradient(
+              135deg,
+              rgba(0, 0, 0, 0.2) 0%,
+              rgba(0, 0, 0, 0.4) 60%,
+              rgba(58, 66, 86, 0.5) 100%
+            )`,
+            zIndex: 1,
           }}
-        >
-          Nhanh chóng – Chuyên nghiệp – Giá cả hợp lý
-        </Typography>
+        />
 
-        <Button
-          component={Link}
-          to="contact"
-          smooth={true}
-          duration={600}
-          offset={-80}
-          variant="contained"
-          color="secondary"
-          size="large"
-          sx={{
-            px: 4,
-            py: 1.5,
-            fontSize: "1rem",
-            fontWeight: "bold",
-            borderRadius: "30px",
-          }}
-        >
-          Liên hệ ngay
-        </Button>
-      </Container>
+        {/* Nội dung */}
+        <Box sx={{ position: "relative", zIndex: 2, px: 3 }}>
+          <Typography
+            variant="h2"
+            sx={{
+                fontSize: { xs: "2rem", md: "3rem" },
+                fontWeight: 900,
+                color: "#242424",                  // màu chữ chính (tối để viền nổi bật)
+                WebkitTextStroke: "1.5px #00bcd4", // viền cyan
+                textShadow: `
+                0 0 5px #00bcd4,
+                0 0 10px #00bcd4,
+                0 0 20px #00bcd4,
+                0 0 30px rgba(0,188,212,0.5)
+                `,
+                textAlign: "center",
+            }}
+            >
+            Dịch vụ sửa chữa điện tử
+            <br />
+            & gia dụng uy tín tại Đà Nẵng
+            </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              mt: 3,
+              mb: 5,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              color: "white",
+            }}
+          >
+            Nhanh chóng – Chuyên nghiệp – Giá cả hợp lý
+          </Typography>
+
+          <Button
+            component={Link}
+            to="contact"
+            smooth
+            duration={600}
+            offset={-80}
+            variant="contained"
+            size="large"
+            sx={{
+                px: 4,
+                py: 1.5,
+                fontSize: "1rem",
+                fontWeight: "bold",
+                borderRadius: "30px",
+                backgroundColor: "secondary.main",        // màu cyan chủ đạo
+                color: "primary.contrastText",          // chữ trắng
+                transition: "all 0.3s ease",            // mượt khi hover
+                "&:hover": {
+                backgroundColor: "primary.main",      // hover đậm hơn
+                boxShadow: "0 6px 20px rgba(255, 152, 0, 0.5)",
+                transform: "translateY(-2px)",        // nhích nhẹ lên
+                },
+            }}
+            >
+            Liên hệ ngay
+            </Button>
+
+        </Box>
+      </Box>
     </Box>
   );
 }
