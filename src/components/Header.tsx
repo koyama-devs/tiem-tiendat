@@ -12,6 +12,7 @@ import {
     Typography,
 } from "@mui/material";
 import { useState } from "react";
+import theme from "../theme"; // import theme để lấy màu
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -23,22 +24,22 @@ export default function Header() {
       position="static"
       elevation={0}
       sx={{
-        background: "linear-gradient(90deg, #0f2027, #203a43, #2c5364)",
+        background: `linear-gradient(90deg, ${theme.palette.primary.main}CC, #004d57, #006978)`,
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         {/* Logo */}
         <Typography
-          variant="h6"
-          sx={{
+        variant="h6"
+        sx={{
             fontWeight: "bold",
             letterSpacing: 1,
             cursor: "pointer",
-            "& span": { color: "#00e676" }, // làm chữ Đạt nổi bật
-          }}
+        }}
         >
-        <span>Tiến Đạt</span> - Sửa Chữa Điện Tử & Gia Dụng
+        <span style={{ color: "#ffffffCC" }}>Tiến Đạt - Sửa Chữa Điện Tử & Gia Dụng</span>
         </Typography>
+
 
         {/* Desktop Menu */}
         <Box
@@ -54,6 +55,8 @@ export default function Header() {
                 position: "relative",
                 cursor: "pointer",
                 fontWeight: 500,
+                color: "#fff",
+                transition: "color 0.3s ease",
                 "&::after": {
                   content: '""',
                   position: "absolute",
@@ -61,8 +64,11 @@ export default function Header() {
                   height: "2px",
                   left: 0,
                   bottom: -4,
-                  backgroundColor: "#00e676",
+                  backgroundColor: theme.palette.primary.main,
                   transition: "width 0.3s ease",
+                },
+                "&:hover": {
+                  color: theme.palette.primary.main,
                 },
                 "&:hover::after": {
                   width: "100%",
@@ -79,14 +85,17 @@ export default function Header() {
           sx={{ display: { xs: "block", md: "none" } }}
           onClick={() => setOpen(true)}
         >
-          <MenuIcon sx={{ color: "white" }} />
+          <MenuIcon sx={{ color: "#fff" }} />
         </IconButton>
         <Drawer
           anchor="right"
           open={open}
           onClose={() => setOpen(false)}
           PaperProps={{
-            sx: { backgroundColor: "#1e293b", color: "white" },
+            sx: {
+              backgroundColor: "#004d57",
+              color: "#fff",
+            },
           }}
         >
           <List sx={{ width: 220 }}>
@@ -96,7 +105,7 @@ export default function Header() {
                   onClick={() => setOpen(false)}
                   sx={{
                     "&:hover": {
-                      backgroundColor: "rgba(0, 230, 118, 0.1)",
+                      backgroundColor: `${theme.palette.primary.main}22`, // hover nhẹ cyan
                     },
                   }}
                 >
@@ -104,6 +113,7 @@ export default function Header() {
                     primary={item}
                     primaryTypographyProps={{
                       fontWeight: 500,
+                      color: "#fff",
                     }}
                   />
                 </ListItemButton>
