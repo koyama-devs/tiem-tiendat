@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 
 import theme from "./theme";
 
+import AdvantagesSection from "./components/AdvantagesSection";
 import ContactForm from "./components/ContactForm";
 import FloatingChatButtons from "./components/FloatingChatButtons";
 import Footer from "./components/Footer";
@@ -18,6 +19,7 @@ export default function App() {
 
       {/* Hero fullwidth, không dùng Container */}
       <Hero />
+      <AdvantagesSection />
       <Services />
       <ContactForm />
       <Footer />
