@@ -85,7 +85,7 @@ type Service = {
 
 function ServiceGrid({ services }: { services: Service[] }) {
   return (
-    <Grid container spacing={4}>
+    <Grid container rowSpacing={8} columnSpacing={0}>
       {services.map((s, i) => (
         <Grid key={i} size={{ xs: 12, sm: 6, md: 4 }}>
           <motion.div
@@ -95,6 +95,8 @@ function ServiceGrid({ services }: { services: Service[] }) {
           >
             <Card
               sx={{
+                maxWidth: 470, // giới hạn chiều rộng
+                mx: "auto",    // canh giữa
                 height: "100%",
                 boxShadow: 3,
                 borderRadius: 3,
@@ -111,17 +113,27 @@ function ServiceGrid({ services }: { services: Service[] }) {
               />
               <CardContent>
                 <Typography
-                  variant="h6"
-                  fontWeight="bold"
-                  gutterBottom
-                  sx={{ mb: 1 }}
+                    variant="h6"
+                    fontWeight="bold"
+                    gutterBottom
+                    sx={{
+                    mb: 1,
+                    color: "primary.main", // làm nổi bật bằng màu chủ đạo
+                    textTransform: "uppercase", // viết hoa toàn bộ
+                    letterSpacing: 0.5,
+                    borderBottom: "2px solid",
+                    borderColor: "secondary.main", // gạch dưới màu secondary
+                    display: "inline-block", // underline chỉ bằng độ dài chữ
+                    pb: 0.5, // padding dưới cho thoáng
+                    }}
                 >
-                  {s.title}
+                    {s.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                  {s.desc}
+                    {s.desc}
                 </Typography>
-              </CardContent>
+                </CardContent>
+
             </Card>
           </motion.div>
         </Grid>
@@ -132,42 +144,51 @@ function ServiceGrid({ services }: { services: Service[] }) {
 
 export default function Services() {
   return (
-    <Container id="services" sx={{ py: { xs: 6, md: 12 } }}>
+    <Container
+      id="services"
+      sx={{
+        py: { xs: 4, md: 8 },
+        px: { xs: 2, sm: 4, md: 6 }, // padding 2 bên
+      }}
+    >
       {/* Nhóm điện tử */}
       <Typography
         variant="h4"
         align="center"
+        color="secondary.main"
         fontWeight="bold"
         gutterBottom
-        sx={{ mb: 4 }}
+        sx={{ mb: 6 }}
       >
         Dịch vụ điện tử
       </Typography>
       <ServiceGrid services={electronicServices} />
 
-      <Divider sx={{ my: 6 }} />
+      <Divider sx={{ my: 8 }} />
 
       {/* Nhóm điện cơ & gia dụng */}
       <Typography
         variant="h4"
         align="center"
         fontWeight="bold"
+        color="secondary.main"
         gutterBottom
-        sx={{ mb: 4 }}
+        sx={{ mb: 6 }}
       >
         Dịch vụ điện cơ & gia dụng
       </Typography>
       <ServiceGrid services={mechanicalServices} />
 
-      <Divider sx={{ my: 6 }} />
+      <Divider sx={{ my: 8 }} />
 
-      {/* Nhóm các thiết bị khác - full width */}
+      {/* Nhóm các thiết bị khác */}
       <Typography
         variant="h4"
         align="center"
         fontWeight="bold"
         gutterBottom
-        sx={{ mb: 4 }}
+        color="secondary.main"
+        sx={{ mb: 6 }}
       >
         Các thiết bị khác
       </Typography>
@@ -179,9 +200,8 @@ export default function Services() {
       >
         <Card
           sx={{
-            maxWidth: "100%",
+            maxWidth: 600, // giới hạn rộng card
             mx: "auto",
-            height: "100%",
             boxShadow: 3,
             borderRadius: 3,
             transition: "transform 0.3s, box-shadow 0.3s",
@@ -195,8 +215,17 @@ export default function Services() {
             alt="Sửa các thiết bị khác"
             sx={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}
           />
-          <CardContent>
-            <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ mb: 1 }}>
+          <CardContent sx={{ textAlign: "center" }}>
+            <Typography variant="h6" fontWeight="bold" gutterBottom sx={{
+                    mb: 1,
+                    color: "primary.main", // làm nổi bật bằng màu chủ đạo
+                    textTransform: "uppercase", // viết hoa toàn bộ
+                    letterSpacing: 0.5,
+                    borderBottom: "2px solid",
+                    borderColor: "secondary.main", // gạch dưới màu secondary
+                    display: "inline-block", // underline chỉ bằng độ dài chữ
+                    pb: 0.5, // padding dưới cho thoáng
+                    }}>
               Sửa các thiết bị điện tử & điện cơ khác
             </Typography>
             <Typography variant="body2" color="text.secondary">
