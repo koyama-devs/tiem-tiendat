@@ -68,7 +68,7 @@ export default function Header() {
                     height: "2px",
                     left: 0,
                     bottom: -4,
-                    backgroundColor: theme.palette.primary.main,
+                    backgroundColor: "secondary.main",
                     transition: "width 0.3s ease",
                   },
                   "&:hover": {

@@ -2,7 +2,7 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Container, Typography } from "@mui/material";
 
 export default function AdvantagesTimelineDetailed() {
-    const Highlight = ({ children }) => (
+    const Highlight = ({ children }: { children: React.ReactNode }) => (
     <Box component="span" sx={{ color: "secondary.main", fontWeight: "bold" }}>
       {children}
     </Box>
