@@ -35,8 +35,12 @@ export default function Footer() {
               }}
             />
             <Typography sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-              <LocationOnIcon fontSize="small" sx={{ mr: 1 }} />
-              35/25A Thái Thị Bôi, tổ 31, Phường Thanh Khê, Đà Nẵng
+            <LocationOnIcon fontSize="small" sx={{ mr: 1 }} />
+            Cơ sở 1: 195 ĐH4 Thuận Hòa, Đại Thắng, Đà Nẵng
+            </Typography>
+            <Typography sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+            <LocationOnIcon fontSize="small" sx={{ mr: 1 }} />
+            Cơ sở 2: 35/25A Thái Thị Bôi, tổ 31, Phường Thanh Khê, Đà Nẵng
             </Typography>
             <Typography sx={{ display: "flex", alignItems: "center", mb: 1 }}>
               <PhoneIcon fontSize="small" sx={{ mr: 1 }} />
