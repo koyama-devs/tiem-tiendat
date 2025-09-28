@@ -9,7 +9,7 @@ const FloatingChatButtons: React.FC = () => {
   };
 
   const handleMessengerClick = (): void => {
-    window.open("https://www.facebook.com/share/1AXoQHVTj1/?mibextid=wwXIfr", "_blank");
+    window.open("https://m.me/732437546628947", "_blank");
   };
 
   return (
