@@ -1,9 +1,7 @@
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
-import YoutubeIcon from "@mui/icons-material/YouTube";
 import { Box, Container, Grid, IconButton, Link, Typography } from "@mui/material";
 import theme from "../theme";
 
@@ -90,9 +88,9 @@ export default function Footer() {
             </Typography>
             <Box>
               {[
-                { icon: <FacebookIcon />, href: "#" },
-                { icon: <InstagramIcon />, href: "#" },
-                { icon: <YoutubeIcon />, href: "#" },
+                { icon: <FacebookIcon />, href: "https://www.facebook.com/share/1Jj9aJ5CBT/?mibextid=wwXIfr" },
+                // { icon: <InstagramIcon />, href: "#" },
+                // { icon: <YoutubeIcon />, href: "#" },
               ].map((item, idx) => (
                 <IconButton
                   key={idx}
