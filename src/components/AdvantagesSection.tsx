@@ -2,14 +2,19 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { Box, Container, Typography } from "@mui/material";
 
 export default function AdvantagesTimelineDetailed() {
+    const Highlight = ({ children }) => (
+    <Box component="span" sx={{ color: "secondary.main", fontWeight: "bold" }}>
+      {children}
+    </Box>
+  );
   const advantages = [
     {
-      title: "Kỹ thuật viên với hơn 30 năm kinh nghiệm",
-      description: "Tay nghề vững vàng, xử lý mọi thiết bị điện tử và gia dụng nhanh chóng, chính xác.",
+      title: "Thợ sửa chữa với hơn 30 năm kinh nghiệm",
+      description: "Với tay nghề vững vàng và niềm tâm huyết với nghề, Tiến Đạt tự tin mang đến dịch vụ sửa chữa chất lượng cao.",
     },
     {
       title: "Sửa chữa tại nhà / tận nơi",
-      description: "Kỹ thuật viên đến tận nhà, tiết kiệm thời gian và tiện lợi.",
+      description: "Thợ sửa chữa đến tận nhà, tiết kiệm thời gian và tiện lợi.",
     },
     {
       title: "Nhận và giao hàng tận nhà",
@@ -18,6 +23,15 @@ export default function AdvantagesTimelineDetailed() {
     {
       title: "Báo giá rõ ràng, minh bạch",
       description: "Không phát sinh chi phí bất ngờ, khách hàng đồng ý mới thực hiện.",
+    },
+    {
+      title: "Giá cả cực kỳ MỀM",
+      description: (
+        <>
+          Tại Tiến Đạt, bạn luôn nhận được dịch vụ chất lượng với mức giá cạnh tranh. <br /> Chúng tôi cam kết{" "}
+          <Highlight>KHÁCH KHÔNG HÀI LÒNG KHÔNG THU PHÍ</Highlight>.
+        </>
+      ),
     },
     {
       title: "Nhanh chóng – xử lý kịp thời",
@@ -40,8 +54,8 @@ export default function AdvantagesTimelineDetailed() {
   return (
     <Box sx={{ py: 8, backgroundColor: "#f0f8ff" }}>
       <Container maxWidth="md">
-        <Typography variant="h4" sx={{ textAlign: "center", mb: 6, fontWeight: "bold", color: "#242424" }}>
-          Quy trình & Ưu điểm nổi bật
+        <Typography variant="h4" sx={{ textAlign: "center", mb: 6, fontWeight: "bold", color: "secondary.main" }}>
+          Tại sao khách hàng chọn Tiến Đạt?
         </Typography>
 
         <Box sx={{ position: "relative", pl: 4 }}>
